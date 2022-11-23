@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    
+
+<% const newPoke = pokebowl[Math.floor(Math.random() * pokebowl.length)] %>
+
+
+<div class="new">
+<form action="/pokemon" method="POST">
+<img id="new_img" src="<%=newPoke.img%> " width="180px" height="180px" ><br>
+ 
+    Name: <input type="text" name="name" value="<%=newPoke.name%>" > <br>
+    Type : <input type="text" name="type" value="<%=newPoke.type%>" > <br>
+    HP : <input type="text" name="stats[hp]"><br>
+    Attack: <input type="text" name="stats[attack]"><br>
+    Defense: <input type="text" name="stats[defense]"><br>
+    Speed: <input type="text" name="stats[speed]"><br>
+    SPattack: <input type="text" name="stats[spattack]"><br>
+    SPdefense: <input type="text" name="stats[spdefense]"><br>
+    <input  type="text" name="img"  value="<%=newPoke.img%>" > <br>
+<input id="Add_pokemon" type="submit" value="Add">
+<button><a href="/pokemon">Back</a></button><br>
+</form>
+<br><br>
+</div>
+
+
+
+</body>
+</html>

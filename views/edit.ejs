@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Pokedex</title>
+</head>
+
+<body>
+    
+
+
+<div class="edit">
+    
+    <img id="edit_image" src="<%=pokemon.img%>" width="175px" height="175px" border-radius="30px"><br>
+
+<form action="/pokemon/<%= index %>?_method=PUT" method="POST">
+    
+    <input type="text" name="img" value="<%=pokemon.img%>"> <br>
+    Name: <input type="text" name="name" value="<%=pokemon.name%>"> <br>
+    Type : <input type="text" name="type" value="<%=pokemon.type%>"> <br>
+    HP : <input type="text" name="stats[hp]" value="<%=pokemon.stats.hp %>"><br>
+    Attack: <input type="text" name="stats[attack]" value="<%=pokemon.stats.attack %>"><br>
+    Defense: <input type="text" name="stats[defense]" value="<%= pokemon.stats.defense %>"><br>
+    Speed: <input type="text" name="stats[speed]" value="<%= pokemon.stats.speed %>"><br>
+    SPattack: <input type="text" name="stats[spattack]" value="<%= pokemon.stats.spattack %>"><br>
+    SPdefense: <input type="text" name="stats[spdefense]" value="<%=pokemon.stats.spdefense %>"> <br>
+    
+<input id="update" type="submit" value="Update">
+<button><a href="/pokemon">Back</a></button>
+</form>
+</div>
+
+
+</body>
+</html>

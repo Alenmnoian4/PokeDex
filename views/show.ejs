@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    
+<div class="show">
+    <div><img id="show_img" src="<%=pokemon.img%>" width="200px" height="200px"><br></div>
+    
+    Name: <%= pokemon.name %> <br>
+    Type: <%= pokemon.type %> <br>
+    HP: <%= pokemon.stats.hp %><br>
+    Attack: <%= pokemon.stats.attack %><br>
+    Defense: <%= pokemon.stats.defense %><br>
+    SPattack: <%= pokemon.stats.spattack %><br>
+    SPdefense: <%= pokemon.stats.spdefense %><br>
+    Speed: <%= pokemon.stats.speed%><br>
+    
+</div>
+<br><br>
+
+<div class="nav_show">
+<button><a href="/pokemon/<%= index %>/edit">Edit</a></button>
+
+<button><a href="/pokemon">Back</button></a></button>
+
+<form action="/pokemon/<%=index%>?_method=DELETE" method="POST"> 
+    <input id="delete" type="submit" value="Delete">
+  </form>
+</div>
+
+
+</body>
+</html>
